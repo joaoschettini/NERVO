@@ -7,7 +7,6 @@ body, ul, li, p {
 }
 
 body {
-    margin-bottom: 100px;
     background-color: #221D23;
     
 }
@@ -29,11 +28,11 @@ a {
     padding: 20px;
 }
 
-.navbar ul {
+.navbar-header ul {
     display: flex;
 }
 
-.navbar li {
+.navbar-header li {
     margin-left: 10px;
     padding: 20px;
 }
@@ -123,6 +122,7 @@ a {
 }
 
 .conteudo-materias {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0));
     display: flex;
     margin: 0px;
     padding: 0px;
@@ -132,19 +132,38 @@ a {
 .container-conteudo-materias {
     margin: 40px;
     margin-top: 100px;
-    margin-left: 100px;
+    margin-left: 120px;
     margin-right: 100px;
 }
 
-.texto-materias {
+.titulo-materias {
     font-size: 1.4rem;
     color: azure;
 }
 
-.texto-materias h1, h5 {
+.titulo-materias h1 {
+    margin-bottom: 90px;
+}
+
+.texto-materias {
+    display: flex;
+    font-size: 1.4rem;
+    color: azure;
+}
+
+.titulo-materias h1, h5 {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.texto-materias {
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.texto-materias div {
+    margin-right: 20px;
 }
 
 .texto-materias img {
@@ -152,13 +171,87 @@ a {
     height: 250px;
 }
 
+.texto-materias p {
+    width: 590px;
+    height: 100px;
+}
 
+.texto-materias h3 {
+    width: 500px;
+}
 
+.texto-materias .img-radiohead {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    background-image: url(https://uploads.tracklist.com.br/wp-content/uploads/2021/05/radiohead-e1620920408605.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    width: 590px;
+    height: 250px;
+}
 
+.texto-materias .img-esquina {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    background-image: url(https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2024/02/07/774773662-lo-borges-milton-nascimento-clube-da-esquina-nada-sera-como-antes.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+    width: 590px;
+    height: 250px;
+}
 
+.texto-materias .img-fishmans {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    background-image: url(https://image.tmdb.org/t/p/w250_and_h141_face/4yTnmfOBTkC1zcyrTFZkXQH5OHq.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+    width: 590px;
+    height: 250px;
+}
 
+.texto-materias .img-brat {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    background-image: url(https://www.most2414.com/wp-content/uploads/2024/08/Charli-Brat-Concert-1024x683.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    width: 590px;
+    height: 250px;
+}
 
+.footer {
+    height: 300px;
+    background-color: #D1603D;
+    font-size: 1.2rem;
+    color: black;
+}
 
+.footer-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 30px;
+    padding-top: 50px;
+}
 
+.logo-footer {
+    margin-left: 50px;
+    padding: 20px;
+}
+
+.navbar-footer ul {
+    display: flex;
+}
+
+.navbar-footer li {
+    margin-left: 10px;
+    padding: 20px;
+}
+
+.footer-2 {
+    margin-top: 50px;
+}
 
 

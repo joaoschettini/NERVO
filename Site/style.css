@@ -147,7 +147,7 @@ a {
 
 .texto-materias {
     display: flex;
-    font-size: 1.4rem;
+    font-size: 1rem;
     color: azure;
 }
 
@@ -166,13 +166,8 @@ a {
     margin-right: 20px;
 }
 
-.texto-materias img {
-    width: 590px;
-    height: 250px;
-}
-
 .texto-materias p {
-    width: 590px;
+    width: 520px;
     height: 100px;
 }
 
@@ -186,7 +181,7 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
-    width: 590px;
+    width: 520px;
     height: 250px;
 }
 
@@ -196,7 +191,7 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 20%;
-    width: 590px;
+    width: 520px;
     height: 250px;
 }
 
@@ -206,7 +201,7 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 70%;
-    width: 590px;
+    width: 520px;
     height: 250px;
 }
 
@@ -216,7 +211,7 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
-    width: 590px;
+    width: 520px;
     height: 250px;
 }
 

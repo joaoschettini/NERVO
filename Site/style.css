@@ -1,3 +1,5 @@
+/* Configurações gerais */
+
 body, ul, li, p {
     margin: 0px;
     padding: 0px;
@@ -15,6 +17,8 @@ a {
     text-decoration: none;
     color: black;
 }
+
+/* Header - Universal */
 
 .header {
     background: #D1603D ;
@@ -53,6 +57,9 @@ a {
     margin: 10px;
     margin-right: 50px;
 }
+
+/* HOME */
+/* Home - Principal */
 
 .conteudo-home {
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.664));
@@ -120,6 +127,8 @@ a {
     width: 230px;
     height: 120px;
 }
+
+/* Home - parte das matérias */
 
 .conteudo-materias {
     background-image: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0));
@@ -215,6 +224,8 @@ a {
     height: 250px;
 }
 
+/* Footer - Universal */
+
 .footer {
     height: 300px;
     background-color: #D1603D;
@@ -251,4 +262,128 @@ a {
 
 .footer .icons-footer a {
     padding: 5px;
+}
+
+/* LOGIN */
+
+.conteudo-login {
+    color: azure;
+    display: flex;
+    width: 100vw;
+}
+
+.conteudo-login .container-lado-texto{
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    color: azure;
+}
+
+.conteudo-login .container-lado-img{
+    display: flex;
+    width: 100vw;
+    justify-content: flex-end;
+    color: azure;
+}
+
+.container-lado-texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-login {
+    background-image: url(https://images.elle.com.br/2024/06/Charli-XCX-1240x1680.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 650px;
+    height: 650px;
+}
+
+.container-login {
+    margin: 40px;
+    margin-top: 60px;
+    margin-bottom: 55px;
+}
+
+.texto-login h1, p, input, a{
+    padding: 10px;
+}
+
+.texto-login h1 {
+    text-align: center;
+}
+
+.formulario-login p {
+    padding: 10px;
+    padding-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.formulario-login input {
+    margin: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 350px;
+    outline-style: none;
+    color: azure;
+    background-color: #221D23;
+    border: 1px solid #D1603D;
+    border-radius: 10px;
+}
+
+.texto-login .botao {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto-login .botao button {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #D1603D;
+    border: 1px solid black;
+    color: black;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+    width: 250px;
+    height: 45px;
+    margin: 10px;
+}
+
+.texto-faca-parte-login {
+    padding: 10px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.texto-faca-parte-login a {
+    color: #D1603D;
+    text-decoration: underline;
+}
+
+.copyright-login {
+    width: 45vw;
+}
+
+.copyright-login p {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+}
+
+.logo-login {
+    width: 45vw;
+}
+
+.logo-login .img-logo-login {
+    color: azure;
+    margin-left: 10px;
 }

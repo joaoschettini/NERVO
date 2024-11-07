@@ -387,3 +387,133 @@ a {
     color: azure;
     margin-left: 10px;
 }
+
+/* CADASTRO */
+
+.conteudo-cadastro {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://images5.alphacoders.com/799/799793.jpg);
+    background-position: 80% 10%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: azure;
+    display: flex;
+}
+
+.container-formulario-cadastro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 440px;
+    border-radius: 50px;
+    background-color: #221D23;
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.texto-cadastro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.texto-cadastro h1, p, input, a{
+    padding: 10px;
+}
+
+.texto-cadastro h1, h5 {
+    text-align: center;
+    margin: 10px;
+}
+
+.texto-cadastro h1 {
+    margin: 5px;
+}
+
+.texto-cadastro h5 {
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+.formulario-cadastro p {
+    padding: 10px;
+    padding-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.formulario-cadastro input {
+    margin: 5px;
+    padding: 10px;
+    width: 350px;
+    outline-style: none;
+    color: azure;
+    background-color: #221D23;
+    border: 1px solid #D1603D;
+    border-radius: 10px;
+}
+
+.texto-cadastro .botao {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto-cadastro .botao button {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #D1603D;
+    border: 1px solid black;
+    color: black;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+    width: 250px;
+    height: 45px;
+    margin: 10px;
+}
+
+.texto-entrar-cadastro {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.texto-entrar-cadastro a {
+    color: #D1603D;
+    text-decoration: underline;
+}
+
+.logo-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-cadastro a {
+    padding: 5px;
+}
+
+.img-logo-cadastro {
+    color: azure;
+}
+
+.copyright-cadastro p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 0.8rem;
+}

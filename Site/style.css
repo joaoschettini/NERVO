@@ -517,3 +517,24 @@ a {
     padding: 5px;
     font-size: 0.8rem;
 }
+
+/* MATÉRIA - RADIOHEAD */
+
+.conteudo-materia-radiohead {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: azure;
+    margin: 20px;
+    font-size: 1rem;
+    height: auto;
+}
+
+.container-conteudo-materia-radiohead {
+    display: flex;
+    width: 800px;
+    margin: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+}

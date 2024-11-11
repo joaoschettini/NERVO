@@ -717,3 +717,199 @@ a {
     width: 32px;
     height: 32px;
 }
+
+/* MATÉRIA - FISHMANS */
+
+.conteudo-materia-fishmans {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: azure;
+    margin: 20px;
+    font-size: 1rem;
+    height: auto;
+}
+
+.container-conteudo-materia-fishmans {
+    display: flex;
+    width: 800px;
+    margin: 30px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.texto-materia-fishmans .video-fishmans {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 5px;
+}
+
+.dono-comentario {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px;
+}
+
+.img-dono {
+    background-image: url(assets/user-circle.png);
+    width: 32px;
+    height: 32px;
+}
+
+.botao-like-comentario {
+    color: azure;
+}
+
+.container-botao-like-comentario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.img-like {
+    background-color: transparent;
+    background-image: url(assets/thumbs-up.png);
+    background-repeat: no-repeat;
+    width: 52px;
+    height: 52px;
+}
+
+.comentario-materia-fishmans {
+    color: azure;
+    margin-left: 70px;
+    margin-right: 60px;
+    margin-bottom: 100px;
+}
+
+.container-comentario-fishmans {
+    padding: 20px;
+}
+
+.conteudo-comentario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-comentario {
+    margin-bottom: 30px;
+}
+
+.sessao-comentario {
+    margin: 10px;
+    padding: 10px;
+}
+
+.usuario-comentario {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.img-usuario {
+    background-image: url(assets/user-circle.png);
+    width: 32px;
+    height: 32px;
+}
+
+/* MATÉRIA - BRAT */
+
+.conteudo-materia-brat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: azure;
+    margin: 20px;
+    font-size: 1rem;
+    height: auto;
+}
+
+.container-conteudo-materia-brat {
+    display: flex;
+    width: 800px;
+    margin: 30px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.texto-materia-brat .video-brat {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 5px;
+}
+
+.dono-comentario {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px;
+}
+
+.img-dono {
+    background-image: url(assets/user-circle.png);
+    width: 32px;
+    height: 32px;
+}
+
+.botao-like-comentario {
+    color: azure;
+}
+
+.container-botao-like-comentario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.img-like {
+    background-color: transparent;
+    background-image: url(assets/thumbs-up.png);
+    background-repeat: no-repeat;
+    width: 52px;
+    height: 52px;
+}
+
+.comentario-materia-brat {
+    color: azure;
+    margin-left: 70px;
+    margin-right: 60px;
+    margin-bottom: 100px;
+}
+
+.container-comentario-brat {
+    padding: 20px;
+}
+
+.conteudo-comentario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-comentario {
+    margin-bottom: 30px;
+}
+
+.sessao-comentario {
+    margin: 10px;
+    padding: 10px;
+}
+
+.usuario-comentario {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.img-usuario {
+    background-image: url(assets/user-circle.png);
+    width: 32px;
+    height: 32px;
+}

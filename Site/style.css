@@ -184,6 +184,10 @@ a {
     width: 500px;
 }
 
+.texto-materias h3 a {
+    color: azure;
+}
+
 .texto-materias .img-radiohead {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
     background-image: url(https://uploads.tracklist.com.br/wp-content/uploads/2021/05/radiohead-e1620920408605.jpg);
@@ -535,6 +539,181 @@ a {
     width: 800px;
     margin: 30px;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     padding: 20px;
+}
+
+.texto-materia-radiohead .video-radiohead {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 5px;
+}
+
+.dono-comentario {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px;
+}
+
+.img-dono {
+    background-image: url(assets/user-circle.png);
+    width: 32px;
+    height: 32px;
+}
+
+.botao-like-comentario {
+    color: azure;
+}
+
+.container-botao-like-comentario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.img-like {
+    background-color: transparent;
+    background-image: url(assets/thumbs-up.png);
+    background-repeat: no-repeat;
+    width: 52px;
+    height: 52px;
+}
+
+.comentario-materia-radiohead {
+    color: azure;
+    margin-left: 70px;
+    margin-right: 60px;
+    margin-bottom: 100px;
+}
+
+.container-comentario-radiohead {
+    padding: 20px;
+}
+
+.conteudo-comentario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-comentario {
+    margin-bottom: 30px;
+}
+
+.sessao-comentario {
+    margin: 10px;
+    padding: 10px;
+}
+
+.usuario-comentario {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.img-usuario {
+    background-image: url(assets/user-circle.png);
+    width: 32px;
+    height: 32px;
+}
+
+/* MATÉRIA - ESQUINA */
+
+.conteudo-materia-esquina {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: azure;
+    margin: 20px;
+    font-size: 1rem;
+    height: auto;
+}
+
+.container-conteudo-materia-esquina {
+    display: flex;
+    width: 800px;
+    margin: 30px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.texto-materia-esquina .video-esquina {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 5px;
+}
+
+.dono-comentario {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px;
+}
+
+.img-dono {
+    background-image: url(assets/user-circle.png);
+    width: 32px;
+    height: 32px;
+}
+
+.botao-like-comentario {
+    color: azure;
+}
+
+.container-botao-like-comentario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.img-like {
+    background-color: transparent;
+    background-image: url(assets/thumbs-up.png);
+    background-repeat: no-repeat;
+    width: 52px;
+    height: 52px;
+}
+
+.comentario-materia-esquina {
+    color: azure;
+    margin-left: 70px;
+    margin-right: 60px;
+    margin-bottom: 100px;
+}
+
+.container-comentario-esquina {
+    padding: 20px;
+}
+
+.conteudo-comentario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-comentario {
+    margin-bottom: 30px;
+}
+
+.sessao-comentario {
+    margin: 10px;
+    padding: 10px;
+}
+
+.usuario-comentario {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.img-usuario {
+    background-image: url(assets/user-circle.png);
+    width: 32px;
+    height: 32px;
 }

@@ -18,7 +18,7 @@
         <div class="container-conteudo-cadastro">
             <div class="container-formulario-cadastro">
                 <div class="logo-cadastro">
-                    <a href="home.html"><div class="img-logo-cadastro">logo</div></a>
+                    <a href="index.html"><div class="img-logo-cadastro">logo</div></a>
                 </div>
                     <div class="texto-cadastro">
                         <h1>
@@ -31,21 +31,21 @@
                             <p>
                                 Username*
                             </p>
-                            <input type="text" id="ipt_username-cadastro">
+                            <input type="text" id="ipt_username">
                             <p>
                                 Email*
                             </p>
-                            <input type="text" id="ipt_email-cadastro">
+                            <input type="text" id="ipt_email">
                             <p>
                                 Senha*
                             </p>
-                            <input type="text" id="ipt_senha-cadastro">
+                            <input type="text" id="ipt_senha">
                             <p>
                                 Confirmar senha*
                             </p>
-                            <input type="text" id="ipt_confirmarsenha-cadastro">
+                            <input type="text" id="ipt_confirmarsenha">
                         </div>
-                        <a class="botao" href="/">
+                        <a class="botao" >
                             <button onclick="cadastrar()">Criar conta</button>
                         </a>
                         <p class="texto-entrar-cadastro">Já tem uma conta?<a id="entrar-cadastro" href="login.html">Entrar</a></p>
@@ -72,10 +72,10 @@ function cadastrar() {
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
-    var nomeVar = ipt_username-cadastro.value;
-    var emailVar = ipt_email-cadastro.value;
-    var senhaVar = ipt_senha-cadastro.value;
-    var confirmacaoSenhaVar = ipt_confirmarsenha-cadastro.value;
+    var nomeVar = ipt_username.value;
+    var emailVar = ipt_email.value;
+    var senhaVar = ipt_senha.value;
+    var confirmacaoSenhaVar = ipt_confirmarsenha.value;
 
     // Verificando se há algum campo em branco
     if (

@@ -14,13 +14,30 @@ idMateria int primary key auto_increment,
 titulo varchar(45),
 dono varchar(45),
 dataPublicacao date
-) auto_increment = 100 ; 
+); 
 
 create table comentario (
-idusuario int auto_increment,
+idComentario int auto_increment,
 fkusuario int,
 fkmateria int,
-primary key (idusuario, fkusuario, fkmateria),
+primary key (idcomentario, fkusuario, fkmateria),
 conteudo varchar(500),
-dataPublicacao date
+dataPublicacao date,
+constraint fkComentarioUsuario
+foreign key (fkusuario) references usuario(idusuario),
+constraint fkComentarioMateria
+foreign key (fkmateria) references materia(idmateria)
 );
+
+create table curtida (
+idCurtida int auto_increment,
+fkusuario int,
+fkmateria int,
+primary key (idcurtida, fkusuario, fkmateria),
+dataCurtida date,
+constraint fkCurtidaUsuario
+foreign key (fkusuario) references usuario(idusuario),
+constraint fkCurtidaMateria
+foreign key (fkmateria) references materia(idmateria)
+);
+

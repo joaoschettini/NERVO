@@ -78,30 +78,11 @@
                         Diga suas próprias impressões sobre essa matéria!
                     </p>
                 </div>
-                <div class="conteudo-comentario">
-                    <div class="sessao-comentario">
-                        <p class="texto-comentario">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt illum officia dolor aliquid! Quasi iusto modi, illo necessitatibus nihil unde sequi mollitia corrupti ea voluptas, vel veniam voluptate sed quibusdam.
-                        </p>
-                        <div class="usuario-comentario">
-                            <div class="img-usuario"></div>
-                            <p>
-                                Usuário
-                            </p>
-                        </div>
-                    </div>
-                    <div class="sessao-comentario">
-                        <p class="texto-comentario">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt illum officia dolor aliquid! Quasi iusto modi, illo necessitatibus nihil unde sequi mollitia corrupti ea voluptas, vel veniam voluptate sed quibusdam.
-                        </p>
-                        <div class="usuario-comentario">
-                            <div class="img-usuario"></div>
-                            <p>
-                                Usuário
-                            </p>
-                        </div>
-                    </div>
+                <div class="area-comentario">
+                    <textarea rows="4" type="text" id="text_comentario"></textarea>
+                    <button onclick="publicar()">Publicar</button>
                 </div>
+                <div class="conteudo-comentario"></div>
             </div>
         </div>
     </div>
@@ -135,3 +116,29 @@
 
 </body>
 </html>
+
+<script>
+
+    function publicar() {
+        var comentario = text_comentario.value
+        
+        if (comentario == "") {
+            alert("Comente algo antes de publicar!")
+        } else {
+            conteudo_comentario.innerHTML += `<div class="sessao-comentario">
+                                            <p class="texto-comentario">
+                                               ${comentario}
+                                            </p>
+                                            <div class="usuario-comentario">
+                                            <div class="img-usuario"></div>
+                                            <p>
+                                                Usuário
+                                            </p>
+                                        </div>
+                                    </div>
+                                    `
+        }
+
+    }
+
+</script>

@@ -123,9 +123,13 @@ a {
 }
 
 .img-home #jd {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     width: 230px;
     height: 120px;
+}
+
+.img-home #brown {
+    margin-bottom: 0px;
 }
 
 /* Home - parte das matérias */
@@ -241,7 +245,6 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
     padding: 30px;
     padding-top: 50px;
 }
@@ -594,19 +597,79 @@ a {
     padding: 20px;
 }
 
+/* CONFIGURAÇÕES COMENTÁRIOS - GERAL */
+
+.area-comentario {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.area-comentario textarea {
+    margin: 10px;
+    padding: 10px;
+    width: 600px;
+    height: auto;
+    min-height: 50px;
+    resize: vertical;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    outline-style: none;
+    color: azure;
+    background-color: #221D23;
+    border: 1px solid #D1603D;
+    border-radius: 10px;
+}
+
+.area-comentario button {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #D1603D;
+    border: 1px solid black;
+    color: black;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+    width: 100px;
+    height: 45px;
+    margin-top: 20px;
+}
+
 .conteudo-comentario {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
 .titulo-comentario {
     margin-bottom: 30px;
 }
 
-.sessao-comentario {
-    margin: 10px;
+.sessao-comentario{
+    background-color: #6b5a6e;
+    border-radius: 10px;
+    margin: 20px;
     padding: 10px;
+    width: 500px;
+    height: fit-content;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.texto-comentario {
+    display: flex;
+    flex-wrap: wrap;
+    width: 450px;
+    height: auto;
+    word-break: break-all;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .usuario-comentario {
@@ -692,33 +755,6 @@ a {
     padding: 20px;
 }
 
-.conteudo-comentario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.titulo-comentario {
-    margin-bottom: 30px;
-}
-
-.sessao-comentario {
-    margin: 10px;
-    padding: 10px;
-}
-
-.usuario-comentario {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.img-usuario {
-    background-image: url(assets/user-circle.png);
-    width: 32px;
-    height: 32px;
-}
-
 /* MATÉRIA - FISHMANS */
 
 .conteudo-materia-fishmans {
@@ -790,33 +826,6 @@ a {
     padding: 20px;
 }
 
-.conteudo-comentario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.titulo-comentario {
-    margin-bottom: 30px;
-}
-
-.sessao-comentario {
-    margin: 10px;
-    padding: 10px;
-}
-
-.usuario-comentario {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.img-usuario {
-    background-image: url(assets/user-circle.png);
-    width: 32px;
-    height: 32px;
-}
-
 /* MATÉRIA - BRAT */
 
 .conteudo-materia-brat {
@@ -886,31 +895,4 @@ a {
 
 .container-comentario-brat {
     padding: 20px;
-}
-
-.conteudo-comentario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.titulo-comentario {
-    margin-bottom: 30px;
-}
-
-.sessao-comentario {
-    margin: 10px;
-    padding: 10px;
-}
-
-.usuario-comentario {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.img-usuario {
-    background-image: url(assets/user-circle.png);
-    width: 32px;
-    height: 32px;
 }

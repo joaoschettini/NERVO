@@ -121,6 +121,8 @@
 
     function publicar() {
         var comentario = text_comentario.value
+        var fkMateria = 1
+        var idUsuario = sessionStorage.ID_USUARIO;
         
         if (comentario == "") {
             alert("Comente algo antes de publicar!")
@@ -138,6 +140,18 @@
                                     </div>
                                     `
         }
+
+        fetch("/comentario/publicar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                comentarioServer: comentario,
+                fkMateriaServer: fkMateria,
+                idUsuarioServer: idUsuario
+            })
+        })
 
     }
 

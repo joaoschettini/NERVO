@@ -82,7 +82,7 @@
                     <textarea rows="4" type="text" id="text_comentario"></textarea>
                     <button onclick="publicar()">Publicar</button>
                 </div>
-                <div class="conteudo-comentario"></div>
+                <div id="conteudo_comentario" class="conteudo_comentario"></div>
             </div>
         </div>
     </div>
@@ -119,8 +119,10 @@
 
 <script>
 
-    function publicar() {
+function publicar() {
         var comentario = text_comentario.value
+        var fkMateria = 2
+        var idUsuario = sessionStorage.ID_USUARIO;
         
         if (comentario == "") {
             alert("Comente algo antes de publicar!")
@@ -138,6 +140,18 @@
                                     </div>
                                     `
         }
+
+        fetch("/comentario/publicar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                comentarioServer: comentario,
+                fkMateriaServer: fkMateria,
+                idUsuarioServer: idUsuario
+            })
+        })
 
     }
 

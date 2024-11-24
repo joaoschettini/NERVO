@@ -28,7 +28,7 @@ fkusuario int,
 fkmateria int,
 primary key (idcomentario, fkusuario, fkmateria),
 conteudo varchar(500),
-dataPublicacao date,
+dataPublicacao timestamp default current_timestamp,
 constraint fkComentarioUsuario
 foreign key (fkusuario) references usuario(idusuario),
 constraint fkComentarioMateria
@@ -40,12 +40,18 @@ idCurtida int auto_increment,
 fkusuario int,
 fkmateria int,
 primary key (idcurtida, fkusuario, fkmateria),
-dataCurtida date,
+dataCurtida timestamp default current_timestamp,
 constraint fkCurtidaUsuario
 foreign key (fkusuario) references usuario(idusuario),
 constraint fkCurtidaMateria
 foreign key (fkmateria) references materia(idmateria)
 );
+
+insert into usuario (nome, email, senha) values
+('joao','joao@gmail.com','123');
+
+insert into comentario (fkusuario, fkmateria, dataPublicacao) values
+(1,1,default);
 
 select * from usuario;
 select * from comentario;

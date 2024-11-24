@@ -119,11 +119,12 @@
 
 <script>
 
-function publicar() {
+    function publicar() {
         var comentario = text_comentario.value
         var fkMateria = 4
         var idUsuario = sessionStorage.ID_USUARIO;
-        
+        var nome = sessionStorage.NOME_USUARIO;
+
         if (comentario == "") {
             alert("Comente algo antes de publicar!")
         } else {
@@ -134,7 +135,7 @@ function publicar() {
                                             <div class="usuario-comentario">
                                             <div class="img-usuario"></div>
                                             <p>
-                                                Usuário
+                                                ${nome}
                                             </p>
                                         </div>
                                     </div>
@@ -153,6 +154,54 @@ function publicar() {
             })
         })
 
+    }
+
+    function listar() {
+        var fkMateria = 4
+
+        fetch(`/comentario/listar${fkMateria}`).then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var conteudo = document.getElementById("conteudo_comentario");
+                    var mensagem = document.createElement("span");
+                    mensagem.innerHTML = "Nenhum resultado encontrado."
+                    conteudo.appendChild(mensagem);
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var conteudo = document.getElementById("conteudo_comentario");
+                    conteudo.innerHTML = "";
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+
+                        conteudo_comentario.innerHTML += `<div class="sessao-comentario">
+                                            <p class="texto-comentario">
+                                               ${publicacao.conteudo}
+                                            </p>
+                                            <div class="usuario-comentario">
+                                            <div class="img-usuario"></div>
+                                            <p>
+                                                ${publicacao.nome}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    `
+
+                    }
+
+
+                    finalizarAguardar();
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            finalizarAguardar();
+        });
     }
 
 </script>

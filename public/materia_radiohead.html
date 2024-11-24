@@ -83,7 +83,7 @@
                     repudiandae assumenda iste modi ut? Voluptas, ducimus!
                 </p>
                 <div class="dono-comentario">
-                    <div class="img-dono"></div>
+                    <img src="assets/_MG_7034.jpeg" class="img-dono"></img>
                     <p>
                         João Roberto Schettini Santos
                     </p>
@@ -98,7 +98,9 @@
                 <p>
                     Gostou dessa publicação?
                 </p>
-                <button class="img-like"></button>
+                <a onclick="curtir()" id="botao_curtida" class="botao-curtida">
+                    <img src="assets/thumbs-up.png" id="img-like" class="img-like"></img>
+                </a>
                 <p>
                     Curta essa matéria!
                 </p>
@@ -169,6 +171,50 @@
 
 <script>
 
+    var curtida = 0
+    function curtir() {
+        var fkMateria = 1
+        var idUsuario = sessionStorage.ID_USUARIO;
+
+        if (curtida == 0) {
+            curtida+=1
+            document.getElementById("img-like").src="assets/thumbs-up-fill.png";
+
+                fetch("/curtida/curtir", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    fkMateriaServer: fkMateria,
+                    idUsuarioServer: idUsuario
+                })
+                })
+        } else if (curtida == 1) {
+            curtida-=1
+            document.getElementById("img-like").src="assets/thumbs-up.png";
+
+            fetch(`/curtida/deletar${idUsuario}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+            }).then(function (resposta) {
+
+            if (resposta.ok) {
+                window.alert("Curtida deletada com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+        }
+
+    }
+
     function publicar() {
         var comentario = text_comentario.value
         var fkMateria = 1
@@ -182,14 +228,13 @@
                                             <p class="texto-comentario">
                                                ${comentario}
                                             </p>
-                                            <div class="usuario-comentario">
-                                            <div class="img-usuario"></div>
-                                            <p>
-                                                ${nome}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    `
+                                                <div class="usuario-comentario">
+                                                <p>
+                                                    - ${nome}
+                                                </p>
+                                                </div>
+                                            </div>
+                                            `
         }
 
         fetch("/comentario/publicar", {
@@ -232,9 +277,8 @@
                                                ${publicacao.conteudo}
                                             </p>
                                             <div class="usuario-comentario">
-                                            <div class="img-usuario"></div>
                                             <p>
-                                                ${publicacao.nome}
+                                                - ${publicacao.nome}
                                             </p>
                                         </div>
                                     </div>

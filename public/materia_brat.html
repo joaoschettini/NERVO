@@ -44,7 +44,7 @@
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam veritatis provident hic minus alias ullam sapiente dolorum mollitia, saepe perferendis commodi exercitationem tenetur eum voluptates voluptas odio! Iusto, ipsum fugiat. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem ratione dignissimos repudiandae assumenda ullam suscipit repellat laborum numquam. Sint aliquam dignissimos, explicabo et excepturi aliquid ipsam corrupti pariatur ea veniam. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate minus perferendis tempora voluptate placeat hic sunt dolor dolores quo molestias consectetur, eaque inventore recusandae at illum necessitatibus nulla earum velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ipsam saepe corporis dignissimos debitis, quaerat perspiciatis alias veritatis quasi, quis nihil aliquam unde ea deleniti explicabo sit maiores odit iure? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, enim neque! Assumenda quam voluptas numquam hic? Alias at excepturi ad quisquam, quod corporis repudiandae assumenda iste modi ut? Voluptas, ducimus!
                 </p>
                 <div class="dono-comentario">
-                    <div class="img-dono"></div>
+                    <img src="assets/_MG_7034.jpeg" class="img-dono"></img>
                     <p>
                         João Roberto Schettini Santos
                     </p>
@@ -59,7 +59,9 @@
                 <p>
                     Gostou dessa publicação?
                 </p>
-                <button class="img-like"></button>
+                <a onclick="curtir()" id="botao_curtida" class="botao-curtida">
+                    <img src="assets/thumbs-up.png" id="img-like" class="img-like"></img>
+                </a>
                 <p>
                     Curta essa matéria!
                 </p>
@@ -119,6 +121,51 @@
 
 <script>
 
+    
+var curtida = 0
+    function curtir() {
+        var fkMateria = 4
+        var idUsuario = sessionStorage.ID_USUARIO;
+
+        if (curtida == 0) {
+            curtida+=1
+            document.getElementById("img-like").src="assets/thumbs-up-fill.png";
+
+                fetch("/curtida/curtir", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    fkMateriaServer: fkMateria,
+                    idUsuarioServer: idUsuario
+                })
+                })
+        } else if (curtida == 1) {
+            curtida-=1
+            document.getElementById("img-like").src="assets/thumbs-up.png";
+
+            fetch(`/curtida/deletar${idUsuario}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+            }).then(function (resposta) {
+
+            if (resposta.ok) {
+                window.alert("Curtida deletada com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+        }
+
+    }
+
     function publicar() {
         var comentario = text_comentario.value
         var fkMateria = 4
@@ -133,9 +180,8 @@
                                                ${comentario}
                                             </p>
                                             <div class="usuario-comentario">
-                                            <div class="img-usuario"></div>
                                             <p>
-                                                ${nome}
+                                                - ${nome}
                                             </p>
                                         </div>
                                     </div>
@@ -182,9 +228,8 @@
                                                ${publicacao.conteudo}
                                             </p>
                                             <div class="usuario-comentario">
-                                            <div class="img-usuario"></div>
                                             <p>
-                                                ${publicacao.nome}
+                                                - ${publicacao.nome}
                                             </p>
                                         </div>
                                     </div>

@@ -59,7 +59,6 @@ a {
 }
 
 /* HOME */
-/* Home - Principal */
 
 .conteudo-home {
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.664));
@@ -132,7 +131,54 @@ a {
     margin-bottom: 0px;
 }
 
-/* Home - parte das matérias */
+/* CONTEÚDO */
+
+/* MÚSICA DA SEMANA */
+
+.musica-semana {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.664));
+    color: azure;
+}
+
+.container-musica-semana {
+    margin: 40px;
+    margin-top: 10px;
+    margin-left: 120px;
+    margin-right: 100px;
+    margin-bottom: 0px;
+}
+
+.titulo-musica-semana {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.conteudo-musica-semana {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
+}
+
+.conteudo-musica-semana iframe {
+    box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 62%);
+    margin: 10px;
+    width: 560px;
+    height: 315px;
+}
+
+.conteudo-musica-semana p {
+    margin: 10px;
+    width: 400px;
+}
+
+/* MATÉRIAS */
 
 .conteudo-materias {
     background-image: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0));
@@ -144,7 +190,7 @@ a {
 
 .container-conteudo-materias {
     margin: 40px;
-    margin-top: 100px;
+    margin-top: 30px;
     margin-left: 120px;
     margin-right: 100px;
 }
@@ -193,7 +239,7 @@ a {
 }
 
 .texto-materias .img-radiohead {
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 62%);
     background-image: url(https://uploads.tracklist.com.br/wp-content/uploads/2021/05/radiohead-e1620920408605.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -203,7 +249,7 @@ a {
 }
 
 .texto-materias .img-esquina {
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 62%);
     background-image: url(https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2024/02/07/774773662-lo-borges-milton-nascimento-clube-da-esquina-nada-sera-como-antes.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -213,7 +259,7 @@ a {
 }
 
 .texto-materias .img-fishmans {
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.26);
     background-image: url(https://image.tmdb.org/t/p/w250_and_h141_face/4yTnmfOBTkC1zcyrTFZkXQH5OHq.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -223,7 +269,7 @@ a {
 }
 
 .texto-materias .img-brat {
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 26%);
     background-image: url(https://www.most2414.com/wp-content/uploads/2024/08/Charli-Brat-Concert-1024x683.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -816,4 +862,223 @@ a {
 
 .container-comentario-brat {
     padding: 20px;
+}
+
+/* SOBRE */
+
+/* Sobre - NERVO */
+
+.sobre-nervo {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.349), rgba(0, 0, 0, 0));
+    color: azure;
+    margin: 0px;
+    padding: 1px;
+}
+
+.container-sobre-nervo {
+    margin: 40px;
+    margin-top: 20px;
+    margin-left: 120px;
+    margin-right: 100px;
+    margin-bottom: 30px;
+}
+
+.titulo-sobre-nervo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.conteudo-sobre-nervo {
+    display: flex;
+}
+
+.texto-sobre-nervo {
+    margin: 10px;
+    padding: 10px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.img-sobre-nervo img {
+    box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 40%);
+    background: transparent;
+    width: 400px;
+    height: 400px;
+    border-radius: 30px;
+}
+
+.missao-visao-valor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.missao, .visao, .valores {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+
+.missao-visao-valor img {
+    width: 52px;
+    height: 52px;
+}
+
+/* Sobre- MIM */
+
+.sobre-mim {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.664));
+    color: azure;
+    margin: 0px;
+    padding: 1px;
+}
+
+.container-sobre-mim {
+    margin: 40px;
+    margin-top: 20px;
+    margin-left: 120px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+}
+
+.titulo-sobre-mim {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.conteudo-sobre-mim {
+    display: flex;
+}
+
+.texto-sobre-mim {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.img-sobre-mim img {
+    box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 40%);
+    background: transparent;
+    width: 400px;
+    height: 400px;
+    border-radius: 30px;
+}
+
+.redes-sobre-mim {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.redes-sobre-mim svg {
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* FALE CONOSCO */
+
+.fale-conosco {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.664));
+    color: azure;
+    margin: 0px;
+    padding: 1px;
+}
+
+.container-fale-conosco {
+    margin: 40px;
+    margin-top: 40px;
+    margin-left: 120px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+}
+
+.titulo-fale-conosco {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.conteudo-fale-conosco {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-size: 20px;
+}
+
+.conteudo-fale-conosco p {
+    font-size: 16px;
+}
+
+.conteudo-fale-conosco input {
+    margin: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 600px;
+    outline-style: none;
+    color: azure;
+    background-color: transparent;
+    border: 1px solid #D1603D;
+    border-radius: 10px;
+}
+
+.conteudo-fale-conosco textarea {
+    margin: 10px;
+    padding: 10px;
+    width: 600px;
+    height: auto;
+    min-height: 50px;
+    resize: vertical;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    outline-style: none;
+    color: azure;
+    background-color: transparent;
+    border: 1px solid #D1603D;
+    border-radius: 10px;
+}
+
+.botao-fale-conosco {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 600px;
+}
+
+.botao-fale-conosco button {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #DDB967;
+    border: 1px solid black;
+    color: black;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+    width: 100px;
+    height: 45px;
+    margin-top: 20px;
 }

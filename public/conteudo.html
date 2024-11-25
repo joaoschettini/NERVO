@@ -7,42 +7,44 @@
   <script src="./js/sessao.js"></script>
   <title>Conteúdo</title>
 </head>
-<body onload="validarSessao()">
+<!-- onload="validarSessao()" -->
+<body>
 
     <header class="header">
-        <a class="logo-header" href="index.html">logo</a>
+        <a class="logo-header" href="conteudo.html">logo</a>
         <nav class="navbar-header">
             <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="/">Matérias</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="#musica-semana">Música da Semana</a></li>
+                <li><a href="#conteudo-materias">Matérias</a></li>
             </ul>
         </nav>
         <ul class="botao">
-            <li><a href="login.html"><button>Entrar</button></a></li>
+            <li><a href="perfil.html"><button>Perfil</button></a></li>
         </ul>
     </header>
 
-    <div class="musica-semana">
+    <div id="musica-semana" class="musica-semana">
         <div class="container-musica-semana">
             <div class="titulo-musica-semana">
                 <h1>
                     Música da Semana
                 </h1>
                 <h5>
-                    Toda semana uma escolha nova para você descubrir algo novo ou relembrar músicas incríveis!
+                    Toda semana uma escolha nova para você descobrir ou relembrar músicas incríveis!
                 </h5>
             </div>
             <div class="conteudo-musica-semana">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Xs-abkgp1Bo?si=Aa8NHcrsZDw-g-Cu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia soluta iusto iure quod? Quod sequi soluta porro in nemo a numquam quia. Libero earum aspernatur eius obcaecati modi est voluptatibus!
-                </p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/aR7blaZOPa4?si=s4GxinHySnozVdeA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="texto-musica-semana">
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia soluta iusto iure quod? Quod sequi soluta porro in nemo a numquam quia. Libero earum aspernatur eius obcaecati modi est voluptatibus!
+                    </p>
+                </div>
             </div>
         </div>
     </div>
   
-    <div class="conteudo-materias">
+    <div id="conteudo-materias" class="conteudo-materias">
         <div class="container-conteudo-materias">
             <div class="titulo-materias">
                 <h5>Matérias</h5>
@@ -113,13 +115,11 @@
 
     <footer class="footer">
         <div class="footer-1">
-            <a class="logo-footer" href="index.html">logo</a>
+            <a class="logo-footer" href="conteudo.html">logo</a>
             <nav class="navbar-footer">
                 <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="/">Matérias</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="#musica-semana">Música da Semana</a></li>
+                    <li><a href="#conteudo-materias">Matérias</a></li>
                 </ul>
             </nav>
         <div class="icons-footer">

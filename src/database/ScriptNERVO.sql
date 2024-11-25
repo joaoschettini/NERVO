@@ -55,3 +55,6 @@ insert into comentario (fkusuario, fkmateria, dataPublicacao) values
 
 select * from usuario;
 select * from comentario;
+select * from curtida;
+
+delete from curtida where fkusuario = 2;

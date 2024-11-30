@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="./js/sessao.js"></script>
+    <title>Cadastro</title>
+</head>
+
+<body>
+
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+        </div>
+    </div>
+
+    <div class="conteudo-favoritos">
+        <div class="container-conteudo-favoritos">
+            <div class="container-formulario-favoritos">
+                <div class="logo-favoritos">
+                    <a>
+                        <div class="img-logo-favoritos">logo</div>
+                    </a>
+                </div>
+                <div class="texto-favoritos">
+                    <h1>
+                        Vamos nos conhecer melhor!
+                    </h1>
+                    <h5 id="subTitulo">
+                        Quais são seus gêneros musicais preferidos? (escolha três)
+                    </h5>
+
+                    <div id="opcoes_genero" class="container-genero">
+                        <label for="ipt_rock" id="label_rock">
+                            <div id="div_rock" class="opcao-genero">
+                                <p>Rock</p>
+                            </div>
+                            <input type="checkbox" id="ipt_rock" class="checkbox" value="Rock" />
+                        </label>
+
+                        <label for="ipt_pop" id="label_pop">
+                            <div id="div_pop" class="opcao-genero">
+                                <p>Pop</p>
+                            </div>
+                            <input type="checkbox" id="ipt_pop" class="checkbox" value="Pop" />
+                        </label>
+
+                        <label for="ipt_rap" id="label_rap">
+                            <div id="div_rap" class="opcao-genero">
+                                <p>Rap</p>
+                            </div>
+                            <input type="checkbox" id="ipt_rap" class="checkbox" value="Rap" />
+                        </label>
+
+                        <label for="ipt_funk" id="label_funk">
+                            <div id="div_funk" class="opcao-genero">
+                                <p>Funk</p>
+                            </div>
+                            <input type="checkbox" id="ipt_funk" class="checkbox" value="Funk" />
+                        </label>
+
+                        <label for="ipt_jazz" id="label_jazz">
+                            <div id="div_jazz" class="opcao-genero">
+                                <p>Jazz</p>
+                            </div>
+                            <input type="checkbox" id="ipt_jazz" class="checkbox" value="Jazz" />
+                        </label>
+
+                        <label for="ipt_rb" id="label_rb">
+                            <div id="div_rb" class="opcao-genero">
+                                <p>R&B</p>
+                            </div>
+                            <input type="checkbox" id="ipt_rb" class="checkbox" value="R&B" />
+                        </label>
+
+                        <label for="ipt_mpb" id="label_mpb">
+                            <div id="div_mpb" class="opcao-genero">
+                                <p>MPB</p>
+                            </div>
+                            <input type="checkbox" id="ipt_mpb" class="checkbox" value="MPB" />
+                        </label>
+
+                        <label for="ipt_eletronica" id="label_eletronica">
+                            <div id="div_eletronica" class="opcao-genero">
+                                <p>Eletrônica</p>
+                            </div>
+                            <input type="checkbox" id="ipt_eletronica" class="checkbox" value="Eletrônica" />
+                        </label>
+
+                        <label for="ipt_reggae" id="label_reggae">
+                            <div id="div_reggae" class="opcao-genero">
+                                <p>Reggae</p>
+                            </div>
+                            <input type="checkbox" id="ipt_reggae" class="checkbox" value="Reggae" />
+                        </label>
+
+
+                        <div id="botoes" class="botao">
+                            <button onclick="cadastrarGenero()" id="btnProx">Avançar</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="copyright-favoritos">
+                    <div class="container-copyright-favoritos">
+                        <div class="texto-copyright">
+                            <p>© 2024 Nervo</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="div_aguardar" class="loading-div">
+                    <!-- <img src="./assets/circle-loading.gif" id="loading-gif" /> -->
+                </div>
+                <div id="div_erros_login"></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    idUsuario = sessionStorage.ID_USUARIO
+
+    var selecionados = []
+
+    ipt_rock.addEventListener('change', () => {
+        if (ipt_rock.checked) {
+            div_rock.classList.add("opcao-selecionada-genero")
+            div_rock.classList.remove("opcao-genero")
+        } else {
+            div_rock.classList.remove("opcao-selecionada-genero")
+            div_rock.classList.add("opcao-genero")
+        }
+    })
+    ipt_pop.addEventListener('change', () => {
+        if (ipt_pop.checked) {
+            div_pop.classList.add("opcao-selecionada-genero")
+            div_pop.classList.remove("opcao-genero")
+        } else {
+            div_pop.classList.remove("opcao-selecionada-genero")
+            div_pop.classList.add("opcao-genero")
+        }
+    })
+    ipt_rap.addEventListener('change', () => {
+        if (ipt_rap.checked) {
+            div_rap.classList.add("opcao-selecionada-genero")
+            div_rap.classList.remove("opcao-genero")
+        } else {
+            div_rap.classList.remove("opcao-selecionada-genero")
+            div_rap.classList.add("opcao-genero")
+        }
+    })
+    ipt_funk.addEventListener('change', () => {
+        if (ipt_funk.checked) {
+            div_funk.classList.add("opcao-selecionada-genero")
+            div_funk.classList.remove("opcao-genero")
+        } else {
+            div_funk.classList.remove("opcao-selecionada-genero")
+            div_funk.classList.add("opcao-genero")
+        }
+    })
+    ipt_jazz.addEventListener('change', () => {
+        if (ipt_jazz.checked) {
+            div_jazz.classList.add("opcao-selecionada-genero")
+            div_jazz.classList.remove("opcao-genero")
+        } else {
+            div_jazz.classList.remove("opcao-selecionada-genero")
+            div_jazz.classList.add("opcao-genero")
+        }
+    })
+    ipt_rb.addEventListener('change', () => {
+        if (ipt_rb.checked) {
+            div_rb.classList.add("opcao-selecionada-genero")
+            div_rb.classList.remove("opcao-genero")
+        } else {
+            div_rb.classList.remove("opcao-selecionada-genero")
+            div_rb.classList.add("opcao-genero")
+        }
+    })
+    ipt_mpb.addEventListener('change', () => {
+        if (ipt_mpb.checked) {
+            div_mpb.classList.add("opcao-selecionada-genero")
+            div_mpb.classList.remove("opcao-genero")
+        } else {
+            div_mpb.classList.remove("opcao-selecionada-genero")
+            div_mpb.classList.add("opcao-genero")
+        }
+    })
+    ipt_eletronica.addEventListener('change', () => {
+        if (ipt_eletronica.checked) {
+            div_eletronica.classList.add("opcao-selecionada-genero")
+            div_eletronica.classList.remove("opcao-genero")
+        } else {
+            div_eletronica.classList.remove("opcao-selecionada-genero")
+            div_eletronica.classList.add("opcao-genero")
+        }
+    })
+    ipt_reggae.addEventListener('change', () => {
+        if (ipt_reggae.checked) {
+            div_reggae.classList.add("opcao-selecionada-genero")
+            div_reggae.classList.remove("opcao-genero")
+        } else {
+            div_reggae.classList.remove("opcao-selecionada-genero")
+            div_reggae.classList.add("opcao-genero")
+        }
+    })
+
+    function cadastrarGenero() {
+
+        if (selecionados.length < 3) {
+            if (ipt_rock.checked) {
+                selecionados.push(ipt_rock.value)
+                console.log(selecionados)
+            }
+            if (ipt_pop.checked) {
+                selecionados.push(ipt_pop.value)
+                console.log(selecionados)
+            }
+            if (ipt_rap.checked) {
+                selecionados.push(ipt_rap.value)
+                console.log(selecionados)
+            }
+            if (ipt_funk.checked) {
+                selecionados.push(ipt_funk.value)
+                console.log(selecionados)
+            }
+            if (ipt_jazz.checked) {
+                selecionados.push(ipt_jazz.value)
+                console.log(selecionados)
+            }
+            if (ipt_rb.checked) {
+                selecionados.push(ipt_rb.value)
+                console.log(selecionados)
+            }
+            if (ipt_mpb.checked) {
+                selecionados.push(ipt_mpb.value)
+                console.log(selecionados)
+            }
+            if (ipt_eletronica.checked) {
+                selecionados.push(ipt_eletronica.value)
+                console.log(selecionados)
+            }
+            if (ipt_reggae.checked) {
+                selecionados.push(ipt_reggae.value)
+                console.log(selecionados)
+            }
+        } else {
+            alert("Selecione apenas 3 gêneros")
+        }
+
+        var genero_um = selecionados[0]
+        var genero_dois = selecionados[1]
+        var genero_tres = selecionados[2]
+
+        fetch("/usuarios/cadastrarGenero", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                genero_umServer: genero_um,
+                genero_doisServer: genero_dois,
+                genero_tresServer: genero_tres,
+                idUsuarioServer: idUsuario
+            })
+        }).then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para seu Perfil...";
+          
+          setTimeout(() => {
+            window.location = "perfil.html";
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    }
+
+</script>

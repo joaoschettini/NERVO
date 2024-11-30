@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="./js/sessao.js"></script>
+    <title>Cadastro</title>
+</head>
+
+<body>
+
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+        </div>
+    </div>
+
+    <div class="conteudo-favoritos">
+        <div class="container-conteudo-favoritos">
+            <div class="container-formulario-favoritos">
+                <div class="logo-favoritos">
+                    <a>
+                        <div class="img-logo-favoritos">logo</div>
+                    </a>
+                </div>
+                <div class="texto-favoritos">
+                    <h1>
+                        Vamos nos conhecer melhor!
+                    </h1>
+                    <h5 id="subTitulo">
+                        Qual sua banda/artista favorito(a)? (escolha um)
+                    </h5>
+
+                    <div id="opcoes_artista" class="container-artista">
+
+                        <div class="input_artista">
+                            <input type="text" id="ipt_artista">
+                        </div>
+
+                        <div id="botoes" class="botao">
+                            <button onclick="cadastrarArtista()" id="btnProx">Enviar respostas</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="copyright-favoritos">
+                    <div class="container-copyright-favoritos">
+                        <div class="texto-copyright">
+                            <p>© 2024 Nervo</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="div_aguardar" class="loading-div">
+                    <!-- <img src="./assets/circle-loading.gif" id="loading-gif" /> -->
+                </div>
+                <div id="div_erros_login"></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    idUsuario = sessionStorage.ID_USUARIO
+
+    function cadastrarArtista() {
+        var artista = ipt_artista.value
+
+        if (
+            artista == ""
+        ) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+                "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
+        } else {
+            setInterval(sumirMensagem, 5000);
+        }
+
+        fetch("/usuarios/cadastrarArtista", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                artistaServer: artista,
+                idUsuarioServer: idUsuario
+            })
+        }).then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para seu Perfil...";
+          
+          setTimeout(() => {
+            window.location = "perfil.html";
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none";
+    }
+
+</script>

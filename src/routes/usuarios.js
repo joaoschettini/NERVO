@@ -12,4 +12,12 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+router.put("/cadastrarGenero", function (req, res) {
+    usuarioController.cadastrarGenero(req, res);
+});
+
+router.put("/cadastrarArtista", function (req, res) {
+    usuarioController.cadastrarArtista(req, res);
+});
+
 module.exports = router;

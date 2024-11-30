@@ -9,20 +9,38 @@ function autenticar(email, senha) {
     return database.executar(instrucaoSql);
 }
 
-// Coloque os mesmos parâmetros aqui. Vá para a var instrucaoSql
 function cadastrar(nome, email, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha);
-    
-    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
-    //  e na ordem de inserção dos dados.
+
     var instrucaoSql = `
-        INSERT INTO usuario (nome, email, senha) VALUES ('${nome}', '${email}', '${senha}');
+        INSERT INTO usuario (nome, email, senha, artistaFav, generoFav1, generoFav2, generoFav3) VALUES ('${nome}', '${email}', '${senha}','Adicione seu artista','Vazio','Vazio','Vazio');
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
+function cadastrarGenero(genero_um, genero_dois, genero_tres, idUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarGenero(): ", genero_um, genero_dois, genero_tres, idUsuario)
+    var instrucaoSql = `
+        UPDATE usuario SET generoFav1 = '${genero_um}', generoFav2 = '${genero_dois}', generoFav3 = '${genero_tres}' WHERE idUsuario = ${idUsuario};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function cadastrarArtista(artista, idUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarArtista(): ", artista, idUsuario)
+    var instrucaoSql = `
+        UPDATE usuario SET artistaFav = '${artista}' WHERE idUsuario = ${idUsuario};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    cadastrarGenero,
+    cadastrarArtista
 };

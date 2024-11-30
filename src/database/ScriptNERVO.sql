@@ -6,7 +6,11 @@ create table usuario (
 idUsuario int primary key auto_increment,
 nome varchar(50),
 email varchar(50),
-senha varchar(50)
+senha varchar(50),
+artistaFav varchar(50),
+generoFav1 varchar(50),
+generoFav2 varchar(50),
+generoFav3 varchar(50)
 );
 
 create table materia (
@@ -47,14 +51,25 @@ constraint fkCurtidaMateria
 foreign key (fkmateria) references materia(idmateria)
 );
 
-insert into usuario (nome, email, senha) values
-('joao','joao@gmail.com','123');
+insert into usuario (nome, email, senha, artistaFav, generoFav1, generoFav2, generoFav3) values
+('joao','joao@gmail.com','123','Radiohead','Rock','Funk','Jazz');
 
-insert into comentario (fkusuario, fkmateria, dataPublicacao) values
-(1,1,default);
+insert into comentario (fkusuario, fkmateria, conteudo, dataPublicacao) values
+(1,1,'aaaa',default);
 
 select * from usuario;
 select * from comentario;
 select * from curtida;
+
+SELECT count(idComentario) from comentario join usuario on fkUsuario = idUsuario where idUsuario = 1;
+
+ SELECT 
+            count(idComentario) as qtdComentarios,
+            dataPublicacao
+        FROM comentario 
+        JOIN usuario 
+        ON fkUsuario = idUsuario 
+        WHERE idUsuario = 1
+        GROUP BY idComentario;
 
 delete from curtida where fkusuario = 2;

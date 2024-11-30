@@ -323,6 +323,7 @@ a {
     color: azure;
     display: flex;
     width: 100vw;
+    height: 100vh;
 }
 
 .conteudo-login .container-lado-texto{
@@ -351,7 +352,7 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
     width: 650px;
-    height: 650px;
+    height: 100vh;
 }
 
 .container-login {
@@ -571,6 +572,195 @@ a {
     font-size: 0.8rem;
 }
 
+/* FAVORITOS - GENERO / ARTISTA */
+
+.conteudo-favoritos {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: azure;
+    display: flex;
+}
+
+.container-formulario-favoritos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 440px;
+    border-radius: 50px;
+    background-color: #221D23;
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.texto-favoritos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.texto-favoritos h1, p, input, a{
+    padding: 10px;
+}
+
+.texto-favoritos h1, h5 {
+    text-align: center;
+    margin: 10px;
+}
+
+.texto-favoritos h1 {
+    margin: 5px;
+}
+
+.texto-favoritos h5 {
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+.formulario-favoritos p {
+    padding: 10px;
+    padding-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.formulario-favoritos input {
+    margin: 5px;
+    padding: 10px;
+    width: 350px;
+    outline-style: none;
+    color: azure;
+    background-color: #221D23;
+    border: 1px solid #D1603D;
+    border-radius: 10px;
+}
+
+.texto-favoritos .botao {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto-favoritos .botao button {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #D1603D;
+    border: 1px solid black;
+    color: black;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+    width: 250px;
+    height: 45px;
+    margin: 10px;
+}
+
+.texto-entrar-favoritos {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.texto-entrar-favoritos a {
+    color: #D1603D;
+    text-decoration: underline;
+}
+
+.logo-favoritos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-favoritos a {
+    padding: 5px;
+}
+
+.img-logo-favoritos {
+    color: azure;
+}
+
+.copyright-favoritos p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 0.8rem;
+}
+
+.container-genero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 350px;
+    margin: 15px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.opcao-genero {
+    background-color: #3a323b;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+}
+
+.opcao-selecionada-genero {
+    color: black;
+    background-color: #DDB967;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+}
+
+.container-artista {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    height: 350px;
+    margin: 15px;
+}
+
+.container-artista input {
+    margin: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 300px;
+    outline-style: none;
+    color: azure;
+    background-color: transparent;
+    border: 1px solid #D1603D;
+    border-radius: 10px;
+}
 
 /* CONFIGURAÇÃO GERAL - DONO MATÉRIA */
 
@@ -1069,7 +1259,7 @@ a {
 
 .botao-fale-conosco button {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    background-color: #DDB967;
+    background-color: rgb(221, 185, 103);
     border: 1px solid black;
     color: black;
     padding: 10px;
@@ -1081,4 +1271,109 @@ a {
     width: 100px;
     height: 45px;
     margin-top: 20px;
+}
+
+/* PERFIL */
+
+.conteudo-perfil {
+    background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.407));
+    color: azure;
+    margin: 0px;
+    padding: 1px;
+}
+
+.container-conteudo-perfil {
+    margin: 40px;
+    margin-top: 40px;
+    margin-left: 120px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+}
+
+.conteudo-perfil-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nome-usuario-perfil {
+    margin: 10px;
+}
+
+.kpi-nivel-vinil {
+    background-color: #3a323b;
+    border-radius: 10px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    width: 120px;
+    height: 100px;
+}
+
+.conteudo-perfil-kpi {
+    display: flex;
+    margin: 10px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.conteudo-perfil-kpi p {
+    text-align: center;
+}
+
+.kpi-artista-fav {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3a323b;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    height: 100px;
+}
+
+.kpi-genero-fav {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3a323b;
+    border-radius: 10px;
+    padding: 20px;
+    width: 600px;
+    height: 100px;
+}
+
+.genero-fav {
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.conteudo-perfil-grafico {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.grafico-comentario, .grafico-curtida {
+    background-color: #3a323b;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    width: 600px;
+    height: 300px;
+}
+
+.titulo-artista {
+    display: flex;
+}
+
+.titulo-genero {
+    display: flex;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,54 +8,58 @@
     <script src="./js/sessao.js"></script>
     <title>Login</title>
 </head>
+
 <body>
-    
-    
+
+
     <div class="conteudo-login">
         <div class="container-lado-texto">
             <div class="logo-login">
                 <div class="container-logo-login">
-                    <a href="./index.html"><div class="img-logo-login">logo</div></a>
+                    <a href="./index.html">
+                        <div class="img-logo-login">logo</div>
+                    </a>
                 </div>
             </div>
             <div class="container-login">
-            <div class="texto-login">
-                <h1>
-                    Entrar
-                </h1>
-                <div class="formulario-login">
-                    <p>
-                        Email*
-                    </p>
-                    <input type="text" id="ipt_email">
-                    <p>
-                        Senha*
-                    </p>
-                    <input type="text" id="ipt_senha">
+                <div class="texto-login">
+                    <h1>
+                        Entrar
+                    </h1>
+                    <div class="formulario-login">
+                        <p>
+                            Email*
+                        </p>
+                        <input type="text" id="ipt_email">
+                        <p>
+                            Senha*
+                        </p>
+                        <input type="text" id="ipt_senha">
+                    </div>
+                    <a class="botao">
+                        <button onclick="entrar()">Entrar</button>
+                    </a>
+                    <div class="alerta_erro">
+                        <div class="card_erro" id="cardErro">
+                            <span id="mensagem_erro"></span>
+                        </div>
+                    </div>
+                    <div id="div_aguardar" class="loading-div">
+                        <!-- <img src="./assets/circle-loading.gif" id="loading-gif"> -->
+                    </div>
+
+                    <div id="div_erros_login"></div>
+                    <p class="texto-faca-parte-login">Ainda não tem uma conta?<a id="faca-parte"
+                            href="cadastro.html">Faça parte!</a></p>
                 </div>
-                <a class="botao">
-                    <button onclick="entrar()">Entrar</button>
-                </a>
-                <div class="alerta_erro">
-                    <div class="card_erro" id="cardErro">
-                        <span id="mensagem_erro"></span>
+            </div>
+            <div class="copyright-login">
+                <div class="container-copyright-login">
+                    <div class="texto-copyright">
+                        <p>© 2024 Nervo</p>
                     </div>
                 </div>
-                <div id="div_aguardar" class="loading-div">
-                    <!-- <img src="./assets/circle-loading.gif" id="loading-gif"> -->
-                </div>
-
-                <div id="div_erros_login"></div>
-                <p class="texto-faca-parte-login">Ainda não tem uma conta?<a id="faca-parte" href="cadastro.html">Faça parte!</a></p>
             </div>
-        </div>
-        <div class="copyright-login">
-            <div class="container-copyright-login">
-                <div class="texto-copyright">
-                    <p>© 2024 Nervo</p>
-                </div>
-            </div>
-        </div>
         </div>
         <div class="container-lado-img">
             <div class="conteudo-img-login">
@@ -67,25 +72,58 @@
 
 
 </body>
+
 </html>
 
 <script>
 
-function entrar() {
+    function entrar() {
 
         aguardar();
 
         var emailVar = ipt_email.value;
         var senhaVar = ipt_senha.value;
 
+        var naoMinusculo = senhaVar == senhaVar.toLowerCase();
+        var naoMaiusculo = senhaVar == senhaVar.toUpperCase();
+        var naoEspecial = !senhaVar.includes('@') && !senhaVar.includes('!') &&
+            !senhaVar.includes('?') && !senhaVar.includes('#') &&
+            !senhaVar.includes('$') && !senhaVar.includes('%') &&
+            !senhaVar.includes('&') && !senhaVar.includes('*') &&
+            !senhaVar.includes('.');
+        var naoNumero = !senhaVar.includes('1') && !senhaVar.includes('2') &&
+            !senhaVar.includes('2') && !senhaVar.includes('3') &&
+            !senhaVar.includes('4') && !senhaVar.includes('5') &&
+            !senhaVar.includes('6') && !senhaVar.includes('7') &&
+            !senhaVar.includes('8') && !senhaVar.includes('9')
+        !senhaVar.includes('0');
+
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "Preencha todos os campos";
+            setInterval(sumirMensagem, 3000)
             finalizarAguardar();
             return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
+        } else if (
+            emailVar.includes('@') == false || emailVar.includes('.com') == false
+        ) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+                "Insira um email válido";
+            setInterval(sumirMensagem, 3000);
+            finalizarAguardar();
+            return false;
+        } else if (
+            senhaVar.length <= 6 || naoMaiusculo || naoMinusculo || naoEspecial || naoNumero
+        ) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+                "A senha deve conter ao menos 8 caracteres, 1 número e 1 caractere especial, 1 letra maiúscula e 1 minúscula";
+            setInterval(sumirMensagem, 3000);
+            finalizarAguardar();
+            return false;
+        } else {
+            setInterval(sumirMensagem, 3000)
         }
 
         console.log("FORM LOGIN: ", emailVar);

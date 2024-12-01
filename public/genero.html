@@ -214,87 +214,73 @@
     })
 
     function cadastrarGenero() {
+    
+    const checkboxes = [
+        ipt_rock,
+        ipt_pop,
+        ipt_rap,
+        ipt_funk,
+        ipt_jazz,
+        ipt_rb,
+        ipt_mpb,
+        ipt_eletronica,
+        ipt_reggae
+    ];
 
-        if (selecionados.length < 3) {
-            if (ipt_rock.checked) {
-                selecionados.push(ipt_rock.value)
-                console.log(selecionados)
-            }
-            if (ipt_pop.checked) {
-                selecionados.push(ipt_pop.value)
-                console.log(selecionados)
-            }
-            if (ipt_rap.checked) {
-                selecionados.push(ipt_rap.value)
-                console.log(selecionados)
-            }
-            if (ipt_funk.checked) {
-                selecionados.push(ipt_funk.value)
-                console.log(selecionados)
-            }
-            if (ipt_jazz.checked) {
-                selecionados.push(ipt_jazz.value)
-                console.log(selecionados)
-            }
-            if (ipt_rb.checked) {
-                selecionados.push(ipt_rb.value)
-                console.log(selecionados)
-            }
-            if (ipt_mpb.checked) {
-                selecionados.push(ipt_mpb.value)
-                console.log(selecionados)
-            }
-            if (ipt_eletronica.checked) {
-                selecionados.push(ipt_eletronica.value)
-                console.log(selecionados)
-            }
-            if (ipt_reggae.checked) {
-                selecionados.push(ipt_reggae.value)
-                console.log(selecionados)
-            }
-        } else {
-            alert("Selecione apenas 3 gêneros")
-        }
+    const selecionados = checkboxes
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value);
 
-        var genero_um = selecionados[0]
-        var genero_dois = selecionados[1]
-        var genero_tres = selecionados[2]
-
-        fetch("/usuarios/cadastrarGenero", {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                genero_umServer: genero_um,
-                genero_doisServer: genero_dois,
-                genero_tresServer: genero_tres,
-                idUsuarioServer: idUsuario
-            })
-        }).then(function (resposta) {
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-          cardErro.style.display = "block";
-
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para seu Perfil...";
-          
-          setTimeout(() => {
-            window.location = "perfil.html";
-          }, "2000");
-
-          limparFormulario();
-          finalizarAguardar();
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
-        }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
+    if (selecionados.length !== 3) {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML =
+            "Você deve selecionar exatamente 3 gêneros.";
+        setTimeout(sumirMensagem, 3000);
         finalizarAguardar();
-      });
-
+        return false;
     }
+
+    const [genero_um, genero_dois, genero_tres] = selecionados;
+
+    fetch("/usuarios/cadastrarGenero", {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            genero_umServer: genero_um,
+            genero_doisServer: genero_dois,
+            genero_tresServer: genero_tres,
+            idUsuarioServer: idUsuario
+        })
+    })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML =
+                    "Gêneros cadastrados com sucesso! Redirecionando para seu Perfil...";
+
+                setTimeout(() => {
+                    window.location = "perfil.html";
+                }, 2000);
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw "Houve um erro ao tentar realizar o cadastro!";
+            }
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+}
+
+function sumirMensagem() {
+    cardErro.style.display = "none";
+}
 
 </script>

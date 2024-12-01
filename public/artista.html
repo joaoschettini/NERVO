@@ -78,8 +78,8 @@
         ) {
             cardErro.style.display = "block";
             mensagem_erro.innerHTML =
-                "(Mensagem de erro para todos os campos em branco)";
-
+                "Insira um artista/banda válido";
+            setInterval(sumirMensagem, 3000);
             finalizarAguardar();
             return false;
         } else {
@@ -102,11 +102,11 @@
           cardErro.style.display = "block";
 
           mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para seu Perfil...";
+            "Artista cadastrado com sucesso! Redirecionando para seu Perfil...";
           
           setTimeout(() => {
             window.location = "perfil.html";
-          }, "2000");
+          }, 2000);
 
           limparFormulario();
           finalizarAguardar();

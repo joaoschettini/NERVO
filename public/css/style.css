@@ -142,7 +142,7 @@ a {
 
 .container-musica-semana {
     margin: 40px;
-    margin-top: 10px;
+    margin-top: 40px;
     margin-left: 120px;
     margin-right: 100px;
     margin-bottom: 0px;
@@ -189,7 +189,7 @@ a {
 }
 
 .container-conteudo-materias {
-    margin: 40px;
+    margin: 20px;
     margin-top: 30px;
     margin-left: 120px;
     margin-right: 100px;
@@ -276,6 +276,37 @@ a {
     background-position: top;
     width: 520px;
     height: 250px;
+}
+
+/* PLAYLIST OFICIAL */
+
+.playlist-nervo {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.664));
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    justify-content: space-around;
+}
+
+.container-playlist-nervo {
+    margin-left: 120px;
+    margin-right: 100px;
+    margin-bottom: 200px;
+}
+
+.titulo-playlist {
+    font-size: 1.4rem;
+    color: azure;
+}
+
+.titulo-playlist h1 {
+    margin-bottom: 60px;
+}
+
+.conteudo-playlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Footer - Universal */
@@ -715,6 +746,21 @@ input[type="checkbox"] {
 
 .opcao-genero {
     background-color: #3a323b;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    transition: 300ms ease-in-out;
+}
+
+.opcao-genero:hover {
+    color: black;
+    background-color: #DDB967;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     margin: 10px;

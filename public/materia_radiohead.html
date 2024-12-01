@@ -17,6 +17,7 @@
             <ul>
                 <li><a href="conteudo.html#musica-semana">Música da Semana</a></li>
                 <li><a href="conteudo.html#conteudo-materias">Matérias</a></li>
+                <li><a href="conteudo.html#playlist-nervo">Playlist</a></li>
             </ul>
         </nav>
         <ul class="botao">
@@ -127,6 +128,17 @@
         </div>
     </div>
 
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+        </div>
+    </div>
+    <div id="div_aguardar" class="loading-div">
+        <!-- <img src="./assets/circle-loading.gif" id="loading-gif"> -->
+    </div>
+
+    <div id="div_erros_login"></div>
+
     <footer class="footer">
         <div class="footer-1">
             <a class="logo-footer" href="conteudo.html">logo</a>
@@ -134,13 +146,14 @@
                 <ul>
                     <li><a href="conteudo.html#musica-semana">Música da Semana</a></li>
                     <li><a href="conteudo.html#conteudo-materias">Matérias</a></li>
+                    <li><a href="conteudo.html#playlist-nervo">Playlist</a></li>
                 </ul>
             </nav>
         <div class="icons-footer">
-            <a href="/">
+            <a href="https://www.instagram.com/roaojoberto/" target="_blank" rel="noopener noreferrer">
                 <svg id="icon-instagram" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path></svg>
             </a>
-            <a href="/">
+            <a href="https://open.spotify.com/playlist/5TB4zkfnxRfLVY9zkD1edo?si=f16580c108ae41e2" target="_blank" rel="noopener noreferrer">
                 <svg id="icon-spotify" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm31.07-46.26a8,8,0,0,1-10.81,3.33,42.79,42.79,0,0,0-40.52,0,8,8,0,0,1-7.48-14.14,59.33,59.33,0,0,1,55.48,0A8,8,0,0,1,159.07,169.74Zm32-56a8,8,0,0,1-10.83,3.29,110.62,110.62,0,0,0-104.46,0,8,8,0,0,1-7.54-14.12,126.67,126.67,0,0,1,119.54,0A8,8,0,0,1,191.06,113.76Zm-16,28a8,8,0,0,1-10.82,3.3,77,77,0,0,0-72.48,0,8,8,0,0,1-7.52-14.12,93,93,0,0,1,87.52,0A8,8,0,0,1,175.06,141.76Z"></path></svg>
             </a>
         </div>
@@ -189,7 +202,12 @@
             }).then(function (resposta) {
 
             if (resposta.ok) {
-                window.alert("Curtida deletada com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
+                cardErro.style.display = "block";
+                    mensagem_erro.innerHTML =
+                        "Curtida deletada com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!";
+                    setInterval(sumirMensagem, 3000);
+                    finalizarAguardar();
+                    return false;
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -209,7 +227,12 @@
         var nome = sessionStorage.NOME_USUARIO;
 
         if (comentario == "") {
-            alert("Comente algo antes de publicar!")
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+                "Comente algo antes de publicar!";
+            setInterval(sumirMensagem, 3000);
+            finalizarAguardar();
+            return false;
         } else {
             conteudo_comentario.innerHTML += `<div class="sessao-comentario">
                                             <p class="texto-comentario">
@@ -283,6 +306,10 @@
             console.error(resposta);
             finalizarAguardar();
         });
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
     }
 
 </script>

@@ -482,7 +482,7 @@ a {
 .conteudo-cadastro {
     width: 100vw;
     height: 100vh;
-    background-image: url(https://images5.alphacoders.com/799/799793.jpg);
+    background-image: url(../assets/nirvana.jpg);
     background-position: 80% 10%;
     background-size: cover;
     display: flex;
